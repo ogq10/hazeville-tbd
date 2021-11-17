@@ -1,0 +1,173 @@
+.bag {
+  position: relative;
+  top: 50%;
+  transform: 1s;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  width: 300px;
+  height: 300px;
+  margin: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .bag {
+    position: relative;
+
+    left: 0%;
+  }
+}
+
+.bag::before,
+.bag::after {
+  position: absolute;
+  content: '';
+}
+
+.bag::after {
+  height: 90px;
+  width: 200px;
+  border: 6px solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100px 100px 0 0;
+  border-bottom: #555555;
+  top: -90px;
+  left: 48px;
+}
+
+.bag .cart_image {
+  position: relative;
+  top: -50%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  opacity: 0.75;
+}
+
+.bag .rope {
+  position: relative;
+  width: 60%;
+  height: 50%;
+  transform: rotate(180deg);
+  transform: rotateX(-180deg);
+  top: -35%;
+  left: 45%;
+}
+
+.card-price {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 200px;
+  height: 38px;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 3px 4px 4px 3px;
+  -moz-border-radius: 3px 4px 4px 3px;
+  border-radius: 3px 4px 4px 3px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+
+  /* This makes room for the triangle */
+  margin-left: 19px;
+
+  position: fixed;
+  top: -37.5%;
+  left: 75%;
+  color: white;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 10px 0 10px;
+}
+
+.thespan {
+  padding: 3px;
+  border-bottom: 1px solid white;
+}
+/* Makes the triangle */
+.card-price:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -19px;
+  width: 0;
+  height: 0;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  border-right: 19px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Makes the circle */
+.card-price:after {
+  content: '';
+  background-color: white;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: -9px;
+  top: 17px;
+}
+
+.line-through {
+  border: 1px solid;
+  color: rgba(255, 255, 255, 0.3);
+  height: 80px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+}
+
+.remove_btn {
+  position: fixed;
+  top: 75%;
+  right: 8%;
+  border: 2px solid;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  width: 100px;
+  height: 38px;
+}
+
+.remove_btn:hover {
+  color: rgb(250, 86, 86);
+  transform: scale(1.1);
+}
+
+.value-button {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  margin: 0px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: fixed;
+  top: 75%;
+  left: 8%;
+}
+
+.decrease {
+  position: relative;
+  left: 10px;
+}
+.increase {
+  position: relative;
+  right: 10px;
+}
+
+.number {
+  color: #fff;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 40px;
+  padding: 10px;
+}
